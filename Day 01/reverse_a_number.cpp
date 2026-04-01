@@ -2,8 +2,8 @@
 // Output:54321
 // Explanation: The reverse of 12345 is 54321.
 
-/*Space complexity = O(logN)
-  Time complexity = O(1)*/
+/*Time complexity = O(logN)
+  Space complexity = O(1)*/
 #include <bits/stdc++.h>
 using namespace std;
 

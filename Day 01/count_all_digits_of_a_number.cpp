@@ -3,8 +3,8 @@
 // Output:5
 // Explanation:  The number 12345 has 5 digits.
 
-/*Space complexity = O(logN)
-  Time complexity = O(1)*/
+/*Time complexity = O(logN)
+  Space complexity = O(1)*/
 #include <bits/stdc++.h>
 using namespace std;
 
