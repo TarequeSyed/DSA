@@ -9,18 +9,21 @@
 // Output: 2
 // Explanation: There are two consecutive 1's in the array. 
 
+/*Time complexity: O(N)
+   Space complexity: O(1)*/
 #include <bits/stdc++.h>
 using namespace std;
 
 int most_consecutive_ones (vector<int>& arr) {
     int n = arr.size(), count = 0;
-    for (int i = 0; i < n; i++) {
-        while (arr[i] == 1) {
+    int i = 0;
+    while (i < n) {
+        if (arr[i] == 1) {
             count++;
-            i++;            
-            if (arr[i] == 0) {
-                count = 0;
-            }
+        }
+        i++;
+        if (arr[i] == 0) {
+            count = 0;
         }
     }
     return count;
