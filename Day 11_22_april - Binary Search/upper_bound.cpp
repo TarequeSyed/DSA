@@ -11,7 +11,7 @@ Input Format: N = 6, arr[] = {3,5,8,9,15,19}, x = 9
 Result: 4
 
 */
-
+// In linear search, it will take -> time: O(N), space: O(1)
 /*Time Complexity: O(logn) 
   Space Complexity: O(1)*/
 #include <bits/stdc++.h>
