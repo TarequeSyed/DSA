@@ -10,7 +10,7 @@ Output: [0, 0, 1, 1, 2]
 Time Complexity: O(n)
 Space Complexity: O(1)*/
 
-// Optimal method Algorithm(xmsss) is: Dutch National Flag algorithm. to do this optimal approach
+// Optimal method Algorithm(xmsss) is: Dutch National Flag algorithm. 
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -41,9 +41,41 @@ class Brute {
         }
 };
 
+class Optimal {
+    public:
+        void sort_0_1_2_opt(vector<int>& nums) {
+            // we will use binary search like algorithm =>
+            int start = 0, mid = 0, end = nums.size() - 1;
+
+            while (mid <= end) {
+                if (nums[mid] == 0) {
+                    swap(nums[mid], nums[start]);
+                    mid++;
+                    start++;
+                }
+                // because '1' has to be in middle;
+                else if (nums[mid] == 1) {
+                    mid++;
+                }
+                else {
+                    swap(nums[mid], nums[end]);
+                    end--;
+                }
+            }
+            for (int y : nums) {
+                cout << y << " ";
+            }
+        }
+};
+
 int main() {
     Brute br;
     vector<int> arr = {1, 0, 2, 1, 0};
     br.sort_0_1_2(arr);
+
+    cout << endl;
+    Optimal op;
+    vector<int> arr2 = {1, 1, 2, 2, 2, 0, 1, 0, 2};
+    op.sort_0_1_2_opt(arr2);
     return 0;
 }
