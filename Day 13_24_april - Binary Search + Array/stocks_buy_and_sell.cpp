@@ -6,7 +6,7 @@ Output: 5
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
 Note: That buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.*/
 
-// optimal to_do
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -25,10 +25,25 @@ int max_profit (vector<int>& arr) {
     return max_1;
 }
 
+// optimal method:
+/*Time: O(N),
+  Space: O(1)*/
+
+int max_profit_optimal (vector<int>& arr) {
+    int minPrice = INT_MAX, maxProfit = 0;
+    for (int i = 0; i < arr.size(); i++) {
+        minPrice = min(arr[i], minPrice);
+        maxProfit = max (maxProfit, arr[i] - minPrice);
+    }
+    return maxProfit;
+}
+
 int main() {
     vector<int> arr = {7,1,5,3,6,4};
     int res = max_profit(arr);
-
     cout << "Max profit is: " << res << endl;
+
+    int re = max_profit_optimal(arr);
+    cout << "Max profit using optimal method is: " << re << endl;
     return 0;
 }
