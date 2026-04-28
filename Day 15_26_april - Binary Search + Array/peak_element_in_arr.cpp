@@ -23,6 +23,11 @@ vector<int> peak_brute (vector<int>& arr) {
     return ans;
 }
 
+vector<int> peak_optimal (vector<int> arr) {
+    vector<int> ans;
+    
+}
+
 int main () {
     
 
