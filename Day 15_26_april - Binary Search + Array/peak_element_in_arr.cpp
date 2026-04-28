@@ -14,7 +14,7 @@ using namespace std;
 
 vector<int> peak_brute (vector<int>& arr) {
     vector<int> ans;
-    for (int i = 0; i < arr.size(); i++) {
+    for (int i = 1; i < arr.size() - 1; i++) {
         if (arr[i] > arr[i-1] && arr[i] > arr[i+1]) {
             ans.push_back(i);
             
@@ -26,9 +26,12 @@ vector<int> peak_brute (vector<int>& arr) {
 int main () {
     
 
-   vector<int> arr= {1,2,1,3,5,6,4};
+   vector<int> arr= {1,2,3,4,5,6,7,8,5,1};
    vector <int> res = peak_brute(arr);
    
+   for (int x : res) {
+        cout << x << " "; 
+   }
 
     return 0;
 }
