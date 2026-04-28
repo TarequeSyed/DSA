@@ -1,2 +1,3 @@
-unique search for the specified alogrithm :   xmsss  
-if something specific is remaining: to do or to_do
+1. unique search for the specified alogrithm :   xmsss  
+2. if something specific is remaining: to do or to_do
+3. Additional things which I can do myself: mksxs
