@@ -1,4 +1,4 @@
-/*Peak element in Array: to_do (to do)
+/*Peak element in Array:
 
 Problem Statement: Given an array of length N, peak element is defined as the element greater than both of its neighbors. 
 Formally, if arr[i] is the peak element, arr[i - 1] < arr[i] and arr[i + 1] < arr[i]. 
