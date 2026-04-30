@@ -11,7 +11,7 @@ Explanation : There are 2 peak numbers that are at indices 1 and 5. We can retur
 
 #include <bits/stdc++.h>
 using namespace std;
-
+// it won't handle the edge cases though.
 vector<int> peak_brute (vector<int>& arr) {
     vector<int> ans;
     for (int i = 1; i < arr.size() - 1; i++) {
@@ -23,9 +23,19 @@ vector<int> peak_brute (vector<int>& arr) {
     return ans;
 }
 
-vector<int> peak_optimal (vector<int> arr) {
+int peak_optimal (vector<int> arr) {
     vector<int> ans;
-    
+    int start = 0, end = arr.size() - 1;
+    while (start < end) {
+        int mid = start + (end-start)/2;
+        if (arr[mid] < arr[mid + 1]) {
+            start = mid + 1;
+        }
+        else {
+            end = mid;
+        }
+    }
+    return start;
 }
 
 int main () {
@@ -38,5 +48,7 @@ int main () {
         cout << x << " "; 
    }
 
+   int resu = peak_optimal(arr);
+   cout << "Peak optimal: " << resu << endl;
     return 0;
 }

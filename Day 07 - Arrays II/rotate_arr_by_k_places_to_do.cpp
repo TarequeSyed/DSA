@@ -7,7 +7,7 @@ Output : [3, 4, 5, 6, 1, 2] */
 #include <bits/stdc++.h>
 using namespace std;
 
-// Thinking of doing this using brute force first, then optimal method. I wanna try this myself.
+// Thinking of doing this using brute force first, then optimal method. I wanna try this myself. (to_do)
 void rotate_k_place_by_right (vector<int>& arr, int k) {
     int n = arr.size() - 1;
     vector<int> temp;
@@ -21,6 +21,10 @@ void rotate_k_place_by_right (vector<int>& arr, int k) {
     for (int x : temp) {
         cout << x << " ";
     }
+}
+
+void rotate_k_by_right_optimal (vector<int>& arr, int k) {
+    
 }
 
 int main () {
