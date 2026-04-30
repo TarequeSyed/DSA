@@ -24,10 +24,10 @@ vector<int> peak_brute (vector<int>& arr) {
 }
 
 int peak_optimal (vector<int> arr) {
-    vector<int> ans;
-    int start = 0, end = arr.size() - 1;
+    int n = arr.size();
+    int start = 0, end = n - 1;
     while (start < end) {
-        int mid = start + (end-start)/2;
+        int mid = start + (end - start) /2;
         if (arr[mid] < arr[mid + 1]) {
             start = mid + 1;
         }
@@ -35,7 +35,6 @@ int peak_optimal (vector<int> arr) {
             end = mid;
         }
     }
-    return start;
 }
 
 int main () {
