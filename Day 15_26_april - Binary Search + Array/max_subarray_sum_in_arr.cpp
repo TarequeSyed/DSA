@@ -1,10 +1,10 @@
-/*Kadane's Algorithm (xmsss): Maximum Subarray Sum in an Array
+/*Kadane's Algorithm (xmsss): Maximum Subarray Sum in an Array 
 
 Problem Statement: Given an integer array nums, find the subarray with the largest sum and return
  the sum of the elements present in that subarray.
 
 A subarray is a contiguous non-empty sequence of elements within an array.
-
+to_do: Print the max subarr as well.
 Example 1:
 Input:
  nums = [2, 3, 5, -2, 7, -4]  
@@ -35,11 +35,13 @@ int max_subarr_sum_brute (vector<int>& arr) {
 
 int max_subarr_sum_optimal (vector<int>& arr) {
     int curr_sum = arr[0], max_sum = arr[0];
+    vector<int> temp;
     for (int i = 1; i < arr.size(); i++) {
         curr_sum = max(arr[i], curr_sum + arr[i]);
+
         max_sum = max(max_sum, curr_sum);
     }
-    return max_sum;
+    return {max_sum};
 }
 
 int main () {
