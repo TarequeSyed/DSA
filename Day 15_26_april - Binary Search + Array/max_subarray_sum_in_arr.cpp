@@ -13,7 +13,7 @@ Output:
 Explanation:
  The subarray from index 0 to index 4 has the largest sum = 15, which is the maximum sum of any contiguous subarray.*/
 
-/*Optimal to_do*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
