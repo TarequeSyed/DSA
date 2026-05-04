@@ -16,6 +16,9 @@ Explanation: The element 10 is not present in the array. So, the answer is False
 */
 
 
+/*Time Complexity: O(logN)
+
+Space Complexity: O(1),*/
 
 #include <bits/stdc++.h>
 using namespace std;
