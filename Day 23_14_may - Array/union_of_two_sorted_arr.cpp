@@ -60,7 +60,24 @@ vector<int> using_set (vector<int> ar1, vector<int> ar2) {
 }
 
 vector<int> two_pointers_optimal (vector<int>& a1, vector<int>& a2) {
-    // to do
+    //to_do
+    int start1 = 0, start2 = 0;
+    vector<int> answer;
+    int ma = max(sizeof(a1), sizeof(a2));
+    for (int i = 0; i < ma; i++) {
+        if (a1[start1] == a1[start2]) {
+            answer.push_back(a1[start1]);
+            start1++;
+            start2++;
+        }
+        if (a1[start1] != a2[start2]) {
+            answer.push_back(a1[start1]);
+            answer.push_back(a2[start2]);
+            start1++;
+            start2++;
+        }
+    }
+    return answer;
 }
 
 int main () {
@@ -73,6 +90,12 @@ int main () {
     cout << "After the union of two sorted arrays: " << endl;
     for (int x : res) {
         cout << x << " "; 
+    }
+
+    vector<int> ans = two_pointers_optimal(arr1, arr2);
+    cout << endl << "Optimal: " << endl;
+    for (int y : ans) {
+        cout << y << " ";
     }
 
     return 0;
