@@ -60,6 +60,7 @@ vector<int> using_set (vector<int> ar1, vector<int> ar2) {
 }
 
 vector<int> two_pointers_optimal(vector<int>& a1, vector<int>& a2) {
+    // done, need revision: dnr
     int left = 0, right = 0;
     int m = a1.size(), n = a2.size();
     vector<int> ans;

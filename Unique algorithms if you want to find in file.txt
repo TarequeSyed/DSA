@@ -1,3 +1,4 @@
 1. unique search for the specified alogrithm :   xmsss  
 2. if something specific is remaining: to do or to_do
 3. Additional things which I can do myself: mksxs
+4. Done but need revision: dnr
