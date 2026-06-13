@@ -59,25 +59,44 @@ vector<int> using_set (vector<int> ar1, vector<int> ar2) {
     return ans;
 }
 
-vector<int> two_pointers_optimal (vector<int>& a1, vector<int>& a2) {
-    //to_do
-    int start1 = 0, start2 = 0;
-    vector<int> answer;
-    int ma = max(sizeof(a1), sizeof(a2));
-    for (int i = 0; i < ma; i++) {
-        if (a1[start1] == a1[start2]) {
-            answer.push_back(a1[start1]);
-            start1++;
-            start2++;
+vector<int> two_pointers_optimal(vector<int>& a1, vector<int>& a2) {
+    int left = 0, right = 0;
+    int m = a1.size(), n = a2.size();
+    vector<int> ans;
+
+    while (left < m && right < n) {
+
+        if (a1[left] <= a2[right]) {
+
+            if (ans.empty() || ans.back() != a1[left])
+                ans.push_back(a1[left]);
+
+            left++;
         }
-        if (a1[start1] != a2[start2]) {
-            answer.push_back(a1[start1]);
-            answer.push_back(a2[start2]);
-            start1++;
-            start2++;
+        else {
+
+            if (ans.empty() || ans.back() != a2[right])
+                ans.push_back(a2[right]);
+
+            right++;
         }
     }
-    return answer;
+
+    while (left < a1.size()) {
+        if (ans.empty() || ans.back() != a1[left])
+            ans.push_back(a1[left]);
+
+        left++;
+    }
+
+    while (right < a2.size()) {
+        if (ans.empty() || ans.back() != a2[right])
+            ans.push_back(a2[right]);
+
+        right++;
+    }
+
+    return ans;
 }
 
 int main () {
