@@ -14,18 +14,31 @@ Output: 1,2,1,4,0,0,0*/
 using namespace std;
 
 
-vector<int> move_zeroes_to_end (vector<int>& arr) {
-    int start = 0, next = start + 1, end = arr.size() - 1;
-    while (start <= end && next <= end) {
-        // to do 
+vector<int> move_zeroes_to_end (vector<int> arr) {
+    int l = 0, r = 0;
+    while (l < arr.size()) {
+        if (arr[l] != 0) {
+            swap(arr[l], arr[r]);
+            l++;
+            r++;
+        }
+
+        else {
+            l++;
+        }
     }
+    return arr;
 }
 
 int main () {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-
     
+    vector<int> arr = {1 ,0 ,2 ,3 ,0 ,4 ,0 ,1};
+    vector<int> res = move_zeroes_to_end(arr);
 
+    cout << "Before: " << endl;
+    for (int x : arr) cout << x << " ";
+
+    cout << endl << "After: " << endl;
+    for (int y : res) cout << y << " ";
     return 0;
 }
