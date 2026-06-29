@@ -14,6 +14,7 @@ Binary representation of 5 is 101. The 0-th bit from LSB is set (1).*/
 #include <bits/stdc++.h>
 using namespace std;
 
+// brute: 
 bool check_bits (int n, int i) {
     string binary = "";
     while (n > 0) {
@@ -25,6 +26,11 @@ bool check_bits (int n, int i) {
     return binary[i] == '1';
 }
 
+// optimal:
+bool check_ith_bit (int n, int i) {
+    return ((1 << i) & n != 0);
+}
+
 int main () {
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -34,7 +40,7 @@ int main () {
 
     while(t--) {
         cin >> n >> i;
-        if ((1 << i) & n) {
+        if ((1 << i) & n != 0) {
             cout << "True" << endl;
         }
         else {
