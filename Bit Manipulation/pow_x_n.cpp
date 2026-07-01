@@ -13,9 +13,9 @@ Explanation:
 #include <bits/stdc++.h>
 using namespace std;
 
-double power_my_approach (double x, double n) {
+double power_my_approach (double x, long n) {
     if (x == 1 || n == 0) return 1;
-    if (x > 0) return (x * power_my_approach(x, n-1));
+    if (n > 0) return (x * power_my_approach(x, n-1));
     return ((1/x) * power_my_approach(x, n+1));
 }
 
@@ -23,9 +23,16 @@ double optimal (double x, long n) {
     if (n == 0) return 1.0;
     if (x == 1) return x;
 
-    if (n % 2 == 0) return (optimal(x * x, n/2));
-    else return (x * (optimal(x, n-1)));
-    if (n < 0) return ((1/x) * optimal(x, n+1));
+    if (n < 0) return (1 / optimal(x, -n)); // we convert -ve by adding '-' to n, into +ve and rest can be handled easily.
+
+    double half = optimal (x, n/2);
+
+    if (n % 2 == 0) {
+        return half * half;
+    }
+    else {
+        return x * half * half;
+    }
      
 }
 

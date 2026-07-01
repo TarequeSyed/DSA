@@ -2,7 +2,7 @@
 
 Problem Statement: Given an array of numbers, print all subsets of it using 
 bitwise operators.
-
+to do
 Examples
 Input: nums = [1, 2, 3]
 Output: [[ ], [1], [2], [3], [1, 2], [2, 3], [3, 1], [1, 2, 3]]

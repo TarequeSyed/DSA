@@ -1,5 +1,5 @@
 /*ivide two integers without using multiplication, division and mod operator
-
+to do
 Problem Statement: Given the two integers, dividend and divisor. Divide without using the 
 mod, division, or multiplication operators and return the quotient.
 The fractional portion of the integer division should be lost as it truncates toward zero.
