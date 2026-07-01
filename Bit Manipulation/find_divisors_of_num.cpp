@@ -31,7 +31,6 @@ vector<int> optimal (int n) {
                 res.push_back(n/i);
         }
 
-
     }
     return res;
 }
